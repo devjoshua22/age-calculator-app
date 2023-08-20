@@ -20,8 +20,8 @@ const date = new Date();
 
 let day = date.getDate()
 let month = date.getMonth()+1
-year = date.getFullYear
-           
+let year = date.getUTCFullYear()
+console.log(year)           
 
 const months = [31,28,31,30,31,30,31,31,30,31,30,31];
 function validation(){
@@ -59,6 +59,8 @@ function handleSubmit(){
         }
         if (monthInp.value > month){
             month = month + 12;
+            year = year - 1
+
            
         }
 
