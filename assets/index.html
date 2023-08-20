@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Age calculator</title>
+</head>
+<body>
+    <main>
+        <div id="content-box"> <!-- this is the container for the calculator -->
+            <div id="input-box"> <!-- this is the form that takes input drom the user -->
+              <form >
+                <input type="text" name="day" id="day" >
+                <label for="day">Day</label> 
+                <input type="text" name="months" id="months" > 
+                <label for="months">Month</label> 
+                <input type="text" name="year" id="year">
+                <label for="year">Year</label> 
+            </form> 
+            </div>
+            <div id="purple-image"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg></div>
+            <div id="result-box"> <!-- this is the result container -->
+                <p> <span id="YYYY">??</span> years </p>
+                <p><span id="MM">??</span> months</p>
+                <p><span id="DD">??</span> days</p>
+            </div>
+        </div>
+    </main>
+    <script src="sandbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(0, 0%, 94%);
+}
+/* the main container */
+#content-box{
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 25px 0px 0px 20px;
+    background-color: white;
+    border-radius: calc(0.4*49px);
+    border-bottom-right-radius: calc(4*44px);
+}
+#input-box{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-bottom:1px solid  hsl(0, 1%, 44%) ;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+#input-box input{
+   border: 0.5px solid hsl(0, 1%, 44%);
+   border-radius: calc(0.4*9px);
+   margin: 10px;
+   padding: 10px;
+   width: 60px;
+   margin-bottom: 60px;
+   outline: none;
+   font-size: 20px;
+   color: hsl(0, 0%, 8%);
+   font-weight: 700;
+
+}
+
+/* styling the label */
+#input-box label{
+    position: absolute;
+    font-size: 18px;
+    font-weight: 600;
+    color: hsl(0, 1%, 44%);
+}
+#input-box label[for="day"]{
+    top: 50px;
+    left: 40px;
+}
+#input-box label[for="months"]{
+    top: 50px;
+    left: 140px;
+}
+#input-box label[for="year"]{
+    top: 50px;
+    left: 250px;
+}
+
+#purple-image{
+    position: absolute;
+    top: 185px;
+}
+#purple-image svg{
+    background-color: hsl(259, 100%, 65%);
+    border-radius: 50%;
+    padding: 10px;
+}
+#result-box{
+    font-size: 32px;
+    font-weight: 900;
+    font-style: italic;
+}
+#result-box span{
+    color:hsl(259, 100%, 65%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
