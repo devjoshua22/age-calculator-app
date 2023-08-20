@@ -18,12 +18,13 @@ body{
     border-bottom-right-radius: calc(4*44px);
 }
 #input-box{
+    width: 290px;
+    height: 190px;
     display: flex;
     justify-content: center;
     align-items:center;
     border-bottom:1px solid  hsl(0, 1%, 44%) ;
-    margin-top: 40px;
-    margin-bottom: 60px;
+
 }
 #input-box input{
    border: 0.5px solid hsl(0, 1%, 44%);
@@ -31,11 +32,28 @@ body{
    margin: 10px;
    padding: 10px;
    width: 60px;
-   margin-bottom: 60px;
    outline: none;
    font-size: 20px;
    color: hsl(0, 0%, 8%);
    font-weight: 700;
+}
+/* positioning the input boxes */
+#input-box input[name="day"]{
+    position: absolute;
+    top: 65px;
+    left: 30px;
+
+}
+#input-box input[name="months"]{
+    position: absolute;
+    top: 65px;
+    left: 120px;
+
+}
+#input-box input[name="year"]{
+    position: absolute;
+    top: 65px;
+    left: 220px;
 
 }
 
@@ -58,6 +76,14 @@ body{
     top: 50px;
     left: 250px;
 }
+/* positoining the error messages */
+#day-block > small{
+    position: absolute;
+    top: 124px;
+    left: 40px;
+    color: hsl(0, 100%, 67%);
+}
+/* positioning the submit button */
 
 #purple-image{
     position: absolute;
