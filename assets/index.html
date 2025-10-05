@@ -2,40 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <title>Age calculator</title>
 </head>
 <body>
-    <main>
-        <div id="content-box"> <!-- this is the container for the calculator -->
-            <div id="input-box"> <!-- this is the form that takes input drom the user -->
-              <form >
-                <div class="block" id="day-block">
-                <input type="number" name="day" id="day" >
-                <label for="day">Day</label>
-                <small></small>
-                 </div>
-                 <div class="block" id="month-block">
-                <input type="number" name="months" id="months" > 
-                <label for="months">Month</label> 
-                <small></small>
+    <!-- Main wrapper to center content -->
+    <main class="center-wrapper">
+        <!-- Age Calculator Card -->
+        <section class="calculator-card">
+            <h1>Age Calculator</h1>
+            <!-- Form for user input -->
+            <form id="age-form">
+                <div class="input-group">
+                    <label for="day">Day</label>
+                    <input type="number" id="day" name="day" min="1" max="31" placeholder="DD" required>
+                    <small class="error" id="day-error"></small>
                 </div>
-                <div class="block" id="year-block">
-                <input type="number" name="year" id="year">
-                <label for="year">Year</label>
-                <small></small> 
+                <div class="input-group">
+                    <label for="month">Month</label>
+                    <input type="number" id="month" name="month" min="1" max="12" placeholder="MM" required>
+                    <small class="error" id="month-error"></small>
                 </div>
-            </form> 
+                <div class="input-group">
+                    <label for="year">Year</label>
+                    <input type="number" id="year" name="year" min="1900" max="9999" placeholder="YYYY" required>
+                    <small class="error" id="year-error"></small>
+                </div>
+                <!-- Submit button -->
+                <button type="submit" id="calculate-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+                </button>
+            </form>
+            <!-- Result display -->
+            <div class="result-group">
+                <p><span id="result-years">--</span> years</p>
+                <p><span id="result-months">--</span> months</p>
+                <p><span id="result-days">--</span> days</p>
             </div>
-            <div id="purple-image" onclick="handleSubmit()"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg></div>
-            <div id="result-box"> <!-- this is the result container -->
-                <p> <span id="YYYY">??</span> years </p>
-                <p><span id="MM">??</span> months</p>
-                <p><span id="DD">??</span> days</p>
-            </div>
-        </div>
+        </section>
     </main>
     <script src="sandbox.js"></script>
 </body>

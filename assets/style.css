@@ -1,127 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-body{
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+/* Reset and base styles */
+body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: hsl(0, 0%, 94%);
-    cursor: default;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: hsl(0, 0%, 94%);
+    min-height: 100vh;
 }
-/* the main container */
-#content-box{
-    width: 370px;
+
+/* Center the main content vertically and horizontally */
+.center-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin: 25px 0px 0px 20px;
-    background-color: white;
-    border-radius: calc(0.4*49px);
-    border-bottom-right-radius: calc(4*44px);
-}
-#input-box{
-    width: 320px;
-    height: 190px;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    border-bottom:1px solid  hsl(0, 1%, 44%) ;
-
-}
-#input-box input{
-   border: 0.5px solid hsl(0, 1%, 44%);
-   border-radius: calc(0.4*9px);
-   margin: 10px;
-   padding: 10px;
-   width: 60px;
-   outline: none;
-   font-size: 20px;
-   color: hsl(0, 0%, 8%);
-   font-weight: 700;
-}
-/* positioning the input boxes */
-#input-box input[name="day"]{
-    position: absolute;
-    top: 65px;
-    left: 20px;
-
-}
-#input-box input[name="months"]{
-    position: absolute;
-    top: 65px;
-    left: 150px;
-
-}
-#input-box input[name="year"]{
-    position: absolute;
-    top: 65px;
-    left: 270px;
-
+    min-height: 100vh;
+    width: 100vw;
 }
 
-/* styling the label */
-#input-box label{
-    position: absolute;
-    font-size: 18px;
-    font-weight: 600;
+/* Calculator card styling */
+.calculator-card {
+    background: #fff;
+    border-radius: 24px 24px 120px 24px; /* Large bottom-right radius */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2rem 1.5rem 2.5rem 1.5rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+    position: relative;
+}
+
+.calculator-card h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: hsl(259, 100%, 65%);
+    text-align: left;
+    font-weight: 700;
+}
+
+/* Input group styling */
+.input-group {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
     color: hsl(0, 1%, 44%);
+    margin-bottom: 0.25rem;
+    letter-spacing: 2px;
 }
-#input-box label[for="day"]{
-    top: 50px;
-    left: 30px;
+.input-group input {
+    width: 90px;
+    padding: 0.75rem 0.5rem;
+    font-size: 1.2rem;
+    border: 1px solid hsl(0, 1%, 44%);
+    border-radius: 8px;
+    font-weight: 700;
+    color: hsl(0, 0%, 8%);
+    outline: none;
+    box-sizing: border-box;
+    text-align: center;
+    background: hsl(0, 0%, 98%);
 }
-#input-box label[for="months"]{
-    top: 50px;
-    left: 160px;
+.input-group input:focus {
+    border-color: hsl(259, 100%, 65%);
 }
-#input-box label[for="year"]{
-    top: 50px;
-    left: 280px;
-}
-/* positoining the error messages */
-#day-block > small{
-    position: absolute;
-    top: 124px;
-    left: 30px;
+.input-group .error {
     color: hsl(0, 100%, 67%);
-    font-size:13px ;
-    font-weight: 400;
+    font-size: 0.9rem;
+    min-height: 1em;
+    margin-top: 0.2rem;
+    display: block;
 }
-#month-block > small{
-    position: absolute;
-    top: 124px;
-    left: 160px;
-    color: hsl(0, 100%, 67%);
-    font-size:13px ;
-    font-weight: 400;
-}
-#year-block > small{
-    position: absolute;
-    top: 124px;
-    left: 280px;
-    color: hsl(0, 100%, 67%);
-    font-size:13px ;
-    font-weight: 400;
-}
-/* positioning the submit button */
 
-#purple-image{
-    position: absolute;
-    top: 185px;
+#age-form {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 2.5rem; /* Increased space for button */
+    position: relative;
+    justify-content: flex-start;
 }
-#purple-image svg{
-    background-color: hsl(259, 100%, 65%);
+
+/* Center the button below the inputs and above the divider */
+#calculate-btn {
+    background: hsl(259, 100%, 65%);
+    border: none;
     border-radius: 50%;
-    padding: 10px;
+    padding: 0.75rem;
+    margin: 0 auto;
     cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    bottom: -52px; /* Place below inputs, above divider */
+    transform: translateX(-50%);
+    z-index: 2;
 }
-#result-box{
-    font-size: 32px;
+#calculate-btn:hover {
+    background: hsl(259, 80%, 55%);
+}
+#calculate-btn svg {
+    display: block;
+}
+
+.calculator-card::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: hsl(0, 0%, 86%);
+    position: absolute;
+    left: 0;
+    top: 210px; /* Move divider below button */
+    z-index: 1;
+}
+
+/* Result group styling */
+.result-group {
+    font-size: 2.5rem;
     font-weight: 900;
     font-style: italic;
+    margin-top: 3.5rem;
+    line-height: 1.2;
 }
-#result-box span{
-    color:hsl(259, 100%, 65%);
+.result-group p {
+    margin: 0.5rem 0;
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-style: italic;
+    display: flex;
+    align-items: baseline;
 }
+.result-group span {
+    color: hsl(259, 100%, 65%);
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-right: 0.5rem;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 500px) {
+    .calculator-card {
+        padding: 1rem 0.5rem 2rem 0.5rem;
+        max-width: 95vw;
+        border-radius: 16px 16px 80px 16px;
+    }
+    .center-wrapper {
+        padding: 1rem 0;
+    }
+    #age-form {
+        flex-direction: row;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+    .input-group input {
+        width: 70px;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+    .result-group {
+        font-size: 1.3rem;
+        margin-top: 2.5rem;
+    }
+    .result-group p {
+        font-size: 1.2rem;
+    }
+    .result-group span {
+        font-size: 1.3rem;
+    }
+    #calculate-btn {
+        width: 60px;
+        height: 60px;
+        bottom: -18px;
+        top: 75%;
+        left: 190px;
+    }
+    .calculator-card::after {
+     display: none;
+    }
+}
+
+/*;;
+  Comments for beginners:
+  - .center-wrapper centers the calculator on the page.
+  - .calculator-card is the main box for the calculator, with a large bottom-right radius.
+  - .input-group styles each input and its label above the box.
+  - #calculate-btn is the round button for submitting the form, centered and overlapping the divider.
+  - .result-group displays the calculated age in bold, italic, and colored style.
+  - Media queries make the design responsive for mobile devices.
+*/
 
 
 
